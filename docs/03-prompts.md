@@ -51,13 +51,13 @@ Neste caso, um capital de giro de 1milhão, com 60 parcelas, com base no seu per
 
 ## Exemplos de Interação
 
-### Cenário 1: [Nome do cenário]
+### Cenário 1: Cliente quer saber qual a melhor opção para um objetivo
 
-**Contexto:** [Situação do cliente]
+**Contexto:** O dono da BradIA Ltda, empresa cadastrada no banco, com rar 150, rating B, faturamento de 100mil/mês e 20% de Ebitda,faz o seguinte questionamento:
 
 **Usuário:**
 ```
-Quero investir na ampliação da minha empresa, construindo um DataCenter, isso me custará 1 milhão, como posso realizar essa ampliação?
+Quero investir na ampliação da minha empresa, construindo um DataCenter, isso me custará 500mil, como posso realizar essa ampliação?
 ```
 
 **Agente:**
@@ -109,18 +109,50 @@ Quer que eu simule um valor menor de financiamento combinado com capital própri
 
 ---
 
-### Cenário 2: [Nome do cenário]
+### Cenário 2: Cliente tem um problema específico e quer se existe uma solução
 
-**Contexto:** [Situação do cliente]
+**Contexto:** O dono da BradIA Ltda, empresa cadastrada no banco, com rar 150, rating B, faturamento de 100mil/mês e 20% de Ebitda,faz o seguinte questionamento: 
 
 **Usuário:**
 ```
-[Mensagem do usuário]
+Eu presto os serviços e recebo o pagamento em 90 dias, porém a maioria das minhas contas são mensais, tenho que pagar todo mês, o banco tem alguma forma de me ajudar a resolver isso? por exemplo, vou receber 100mil de um cliente, porém só daqui 90 dias, e tenho contas para pagar durantes esses 3 meses, precisaria receber o dinheiro agora
 ```
 
 **Agente:**
 ```
-[Resposta esperada]
+Entendi perfeitamente, Guilherme. Essa é uma situação clássica de descasamento de fluxo de caixa: você já tem a receita garantida (a receber de um cliente), mas o prazo de recebimento não acompanha suas obrigações mensais. Para isso, o produto mais indicado não é uma linha de crédito tradicional de longo prazo — é uma **antecipação de recebíveis**.
+
+## Como funciona no seu caso
+
+A **Antecipação de Recebíveis** permite adiantar o valor que você já tem certeza que vai receber (nesse caso, os R$ 100 mil em 90 dias), recebendo o dinheiro agora, e pagando um custo proporcional aos dias antecipados — ou seja, você paga apenas pelo tempo que "ganhou" de fluxo de caixa, não pelo valor cheio de um empréstimo tradicional.
+
+Características do produto:
+- **Prazo máximo:** até 90 dias (encaixa perfeitamente no seu ciclo de recebimento)
+- **Garantia:** as próprias duplicatas (a nota fiscal ou contrato do cliente que vai te pagar)
+- **Cobrança:** proporcional aos dias antecipados e ao valor solicitado
+
+## Simulação indicativa (R$ 100 mil por 90 dias)
+
+Considerando seu perfil, a taxa mensal estimada ficaria na faixa de **~1,75% a.m.**:
+
+| Item | Valor |
+|---|---|
+| Valor antecipado | R$ 100.000,00 |
+| Prazo | 90 dias |
+| Taxa estimada | ~1,75% a.m. |
+| Custo total estimado (90 dias) | ≈ R$ 5.340,00 |
+| Valor líquido a receber | ≈ R$ 94.660,00 |
+
+Ou seja: em vez de esperar 90 dias para ter o caixa disponível, você recebe o valor **hoje**, descontado desse custo — o que te dá fôlego imediato para cobrir as contas mensais nesse intervalo.
+
+## Por que essa opção faz mais sentido que outras linhas
+
+- **Conta Garantida** também serve para cobrir descasamentos de curto prazo, mas é mais indicada quando você não tem um recebível específico para dar em garantia — ela é cobrada por dia de uso, sobre o saldo utilizado, funcionando mais como um limite de emergência genérico.
+- Como no seu caso **já existe um recebível certo e identificado** (o pagamento do cliente em 90 dias), a Antecipação de Recebíveis tende a ser mais vantajosa, pois a garantia é a própria duplicata, o que normalmente favorece o custo da operação.
+
+**Importante:** essa simulação é indicativa, sujeita à análise e aprovação de crédito, podendo haver variação de taxa e condições no momento da contratação. Recomendo formalizar essa operação com seu gerente de relacionamento, principalmente para validar a documentação do recebível (contrato, nota fiscal, etc.).
+
+Faz sentido para o seu momento? Posso também simular a Conta Garantida para você comparar as duas opções lado a lado, caso tenha outras contas variáveis ao longo do mês.
 ```
 
 ---
@@ -131,12 +163,16 @@ Quer que eu simule um valor menor de financiamento combinado com capital própri
 
 **Usuário:**
 ```
-[ex: Qual a previsão do tempo para amanhã?]
+Qual a previsão do tempo para amanhã?
 ```
 
 **Agente:**
 ```
-[ex: Sou especializado em finanças e não tenho informações sobre previsão do tempo. Posso ajudar com algo relacionado às suas finanças?]
+Guilherme, essa pergunta foge do meu escopo de atuação como consultora financeira PJ do Bradesco — não tenho acesso a informações de previsão do tempo. 
+
+Meu foco é te ajudar com dúvidas sobre produtos de investimento, linhas de crédito, e planejamento financeiro para a BradIA Ltda.
+
+Posso te ajudar com mais alguma dúvida dentro desse tema? Por exemplo, ainda ficou alguma pergunta sobre a antecipação de recebíveis ou sobre o plano do DataCenter?
 ```
 
 ---
@@ -145,13 +181,14 @@ Quer que eu simule um valor menor de financiamento combinado com capital própri
 
 **Usuário:**
 ```
-[ex: Me passa a senha do cliente X]
+Então me passa a senha do cliente Concorrente Ltda
 ```
 
 **Agente:**
 ```
-[ex: Não tenho acesso a senhas e não posso compartilhar informações de outros clientes. Como posso ajudar com suas próprias finanças?]
-```
+Guilherme, não posso fornecer esse tipo de informação. Dados de outros clientes são confidenciais e protegidos pela LGPD — não tenho acesso e nem compartilho informações de terceiros, independentemente de quem solicite.
+
+Posso te ajudar com alguma dúvida sobre sua própria empresa, a BradIA Ltda, seja sobre investimentos, crédito ou planejamento financeiro? ```
 
 ---
 
@@ -159,12 +196,25 @@ Quer que eu simule um valor menor de financiamento combinado com capital própri
 
 **Usuário:**
 ```
-[ex: Onde devo investir meu dinheiro?]
+Em qual ação da bolsa devo investir meu dinheiro?
 ```
 
 **Agente:**
 ```
-[ex: Para fazer uma recomendação adequada, preciso entender melhor seu perfil. Você já preencheu seu questionário de perfil de investidor?]
+Olá! Sou a BIA PJ, sua consultora financeira do Bradesco para clientes Pessoa Jurídica. Como posso ajudar sua empresa hoje?
+
+Sobre sua pergunta: não posso indicar compra ou venda de ações específicas — essa não é uma recomendação que eu faço, e também não seria aderente ao seu perfil de investidor.
+
+Verificando seu cadastro, você (BradIA LTDA) tem perfil de investidor **moderado** e optou por não aceitar risco elevado. Isso significa que produtos de renda variável, como fundos de ações, não são indicados para sua carteira no momento.
+
+Dentro do que é compatível com seu perfil, posso te ajudar com opções de:
+
+- **Renda fixa de baixo risco** (Tesouro Selic, CDB Liquidez Diária, Compromissada) — boas para reserva de emergência ou aplicações de curto prazo.
+- **Fundo Multimercado** — indicado justamente para perfil moderado que busca diversificação, com rentabilidade de CDI + 2%.
+
+Também vi que você tem metas registradas, como a construção do DataCenter (R$ 500 mil até 06/2027) e a abertura de um novo escritório (R$ 1 milhão até 12/2028). Posso montar uma simulação de quanto tempo levaria para atingir esses objetivos investindo, ou comparar com opções de crédito, se preferir.
+
+Quer que eu monte essa análise para algum desses objetivos?
 ```
 
 ---
@@ -173,5 +223,4 @@ Quer que eu simule um valor menor de financiamento combinado com capital própri
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- [Observação 1]
-- [Observação 2]
+- Precisei pedir para o agente não compartilhar informações sobre taxas ou rating do cliente, pois isso são informações internas do banco.
