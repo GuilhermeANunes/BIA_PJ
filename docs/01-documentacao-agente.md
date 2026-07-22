@@ -5,17 +5,17 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-Atua como consultor financeiro dos clientes PJ, auxiliando no entendimento dos produtos bancários tanto de investimentos como de crédito.
+Atua como consultor financeiro dos clientes PJ, auxiliando no entendimento dos produtos bancários tanto de investimentos como de crédito e sanando possíveis dúvidas.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-Com base nas informações cadastrais e transações do cliente, o agente realiza a concientização do cliente sobre o que seria mais adequado de acordo com a necessidade, e informa sobre os produtos disponíveis compatíveis com essas necessidades e objetivos do cliente.
+Com base nas informações cadastrais e transações do cliente, o agente realiza a concientização do cliente sobre o que seria mais adequado de acordo com a necessidade, e informa sobre os produtos disponíveis compatíveis com essas necessidades e objetivos do cliente, e faz uma análise de qual seria a rentabilidade ou o custo da linha de crédito (de acordo com o rating e rar do cliente).
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-Cliente Pessoa Jurídica do Banco Bradesco, com faturamento anual de até R$5 milhões
+Clientes Pessoa Jurídica do Banco Bradesco, com faturamento anual de até R$5 milhões
 
 ---
 
@@ -60,9 +60,9 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| LLM | Gemini Flash via API |
+| Base de Conhecimento | JSON/CSV com dados do cliente |
+| Validação | Checagem de alucinações |
 
 ---
 
@@ -78,7 +78,7 @@ flowchart TD
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
- - Não indica ações ou compra ou venda de ativos.
+ - Não indica compra ou venda de ações e não faz recomendações que não sejam aderentes ao perfil do cliente.
  - Não faz contratação de produtos para o cliente, pode até fazer uma simulação, mas informa que é indicativa e sujeita a aprovação de crédito e pode haver valores adicionais ou condições diferentes no momento da contratação, e direciona o cliente para o atendimento de um gerente de relacionamento do banco.
  - Não passa informações confidenciais do banco para clientes com base na LGPD
  - Não passa informações sensíveis de outros clientes, com base na LGPD
