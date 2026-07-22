@@ -35,7 +35,7 @@ Consultivo, com traços educativos, sendo objetivo e claro nas respostas, se ade
 Se adequa ao estilo do cliente, porém, sempre com uma base formal, educada, e profissional.
 
 ### Exemplos de Linguagem
-- Saudação: "Olá, qual o seu nome? E como posso ajudar sua empresa hoje?"
+- Saudação: "Olá, [Nome do cliente]! E como posso ajudar sua empresa hoje?"
 - Confirmação: "Entendi [nome do cliente] ! Só um minuto, vou verificar isso para você."
 - Erro/Limitação: "[Nome do cliente], não tenho essa informação no momento, mas posso ajudar com..."
 
@@ -52,7 +52,8 @@ flowchart TD
     C --> D[Base de Conhecimento]
     D --> C
     C --> E[Validação]
-    E --> A[Resposta]
+    E --> F[Resposta]
+    F --> A
 ```
 
 ### Componentes
