@@ -101,6 +101,10 @@ Caso o agente utilize Python para realizar a consulta, os dados serão usados de
 
 > Mostre um exemplo de como os dados são formatados para o agente.
 
+De acordo com a solicitação do usuario, o agente fará a consulta a base de dados, por ser dinâmica, pode consultar apenas as informações relevantes para aquela pergunta ou contexto específico, otimizando o tempo de resposta e a eficiência do agente.
+
+Exemplo de consulta específica:
+
 ```
 Dados do Cliente:
 - Nome: BradIA ltda
