@@ -2,17 +2,19 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
+Alterei as informações originais, modificando o perfil do cliente para PJ e consolidei as várias fontes de dados em uma única Base de dados relacionais utilizando um arquivo sqlite3, facilitando consultas, organizando as informações e aumentando a eficiência do processo de consulta e acesso as informações, visto que com uma única consulta o agente pode acessar todas as informações necessárias, reduzindo a utilização de tokens. 
 
-| Arquivo | Formato | Utilização no Agente |
-|---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_cliente.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil do cliente |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
+Segue a organização da base de dados:
 
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| Arquivo | Formato | Tabela | Utilização no Agente |
+|---------|---------|--------|--------------|
+| `data_base.db` | DB | histprico_atendimento | Contextualizar interações anteriores |
+| `data_base.db` | DB | cliente | Dados cadastrais do cliente |
+| `data_base.db` | DB | metas | Personalizar recomendações |
+| `data_base.db` | DB | produtos_investimento | Sugerir produtos de investimento adequados ao perfil do cliente |
+| `data_base.db` | DB | produtos_credito | Sugerir produtos de credito adequados ao perfil do cliente |
+| `data_base.db` | DB | produtos_recomendacao_cliente | Produtos filtrados de acordo com o perfil do cliente |
+| `data_base.db` | DB | transacoes | Analisar padrão de movimentacao do cliente |
 
 ---
 
@@ -33,14 +35,62 @@ Também adicionei alguns produtos de crédito na base de produtos financeiros, c
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-Os arquivos JSON e CSV são carregados junto com a documentação do agente, gerando assim a base de dados necessária para as interações.
+Para acessar a base de dados, o agente faz uma consulta SQL para buscar as informações necessárias de acordo com a pergunta do usuario, conforme exemplo:
+
+´´´SQL
+SELECT 
+    c.nome AS cliente,
+    c.perfil_investidor,
+    c.rating,
+    t.data AS data_transacao,
+    t.descricao,
+    t.categoria,
+    t.valor,
+    t.tipo
+FROM cliente c
+JOIN transacoes t ON c.cliente_id = t.cliente_id
+WHERE c.nome = 'BradIA LTDA'
+ORDER BY t.data DESC
+LIMIT 10;
+´´´
+Mas como uma segunda opção, os dados podem ser anexados manualmente no início da sessão.
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-Os dados são consultados dinamicamente pelo modelo, visto que foram incluidos na memória do agente, antes de inicar a interação.
+Caso as consultas sejam realizadas pelo agente diretamente em SQL, os dados serão usados dessas maneira:
 
-Sendo assim, as respostas que são geradas por ele, são embasadas nos dados fornecidos previamente.
+cliente | perfil_investidor | rating | data_transacao | descricao | categoria | valor | tipo
+BradIA LTDA | moderado | B | 2025-10-31 | Tarifa Cesta Bancária PJ + Taxas de Emissão PIX/Boleto | Despesas Bancárias | 165.0 | saida
+BradIA LTDA | moderado | B | 2025-10-28 | Assessoria Jurídica Especializada em Contratos de TI | Serviços Terceirizados | 1200.0 | saida
+BradIA LTDA | moderado | B | 2025-10-27 | Cartão Caju - Benefício Alimentação / Refeição Devs | Pessoas & Benefícios | 2400.0 | saida
+
+Caso o agente utilize Python para realizar a consulta, os dados serão usados dessa maneira:
+
+´´´Python
+[
+  {
+    "cliente": "BradIA LTDA",
+    "perfil_investidor": "moderado",
+    "rating": "B",
+    "data_transacao": "2025-10-31",
+    "descricao": "Tarifa Cesta Bancária PJ + Taxas de Emissão PIX/Boleto",
+    "categoria": "Despesas Bancárias",
+    "valor": 165.0,
+    "tipo": "saida"
+  },
+  {
+    "cliente": "BradIA LTDA",
+    "perfil_investidor": "moderado",
+    "rating": "B",
+    "data_transacao": "2025-10-28",
+    "descricao": "Assessoria Jurídica Especializada em Contratos de TI",
+    "categoria": "Serviços Terceirizados",
+    "valor": 1200.0,
+    "tipo": "saida"
+  }
+]
+´´´
 
 ---
 
