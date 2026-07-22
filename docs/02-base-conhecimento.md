@@ -61,10 +61,12 @@ Mas como uma segunda opção, os dados podem ser anexados manualmente no início
 
 Caso as consultas sejam realizadas pelo agente diretamente em SQL, os dados serão usados dessas maneira:
 
+```SQL
 cliente | perfil_investidor | rating | data_transacao | descricao | categoria | valor | tipo
 BradIA LTDA | moderado | B | 2025-10-31 | Tarifa Cesta Bancária PJ + Taxas de Emissão PIX/Boleto | Despesas Bancárias | 165.0 | saida
 BradIA LTDA | moderado | B | 2025-10-28 | Assessoria Jurídica Especializada em Contratos de TI | Serviços Terceirizados | 1200.0 | saida
 BradIA LTDA | moderado | B | 2025-10-27 | Cartão Caju - Benefício Alimentação / Refeição Devs | Pessoas & Benefícios | 2400.0 | saida
+```
 
 Caso o agente utilize Python para realizar a consulta, os dados serão usados dessa maneira:
 
