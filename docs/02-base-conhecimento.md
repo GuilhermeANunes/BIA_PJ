@@ -37,7 +37,7 @@ Também adicionei alguns produtos de crédito na base de produtos financeiros, c
 
 Para acessar a base de dados, o agente faz uma consulta SQL para buscar as informações necessárias de acordo com a pergunta do usuario, conforme exemplo:
 
-´´´SQL
+```SQL
 SELECT 
     c.nome AS cliente,
     c.perfil_investidor,
@@ -52,7 +52,8 @@ JOIN transacoes t ON c.cliente_id = t.cliente_id
 WHERE c.nome = 'BradIA LTDA'
 ORDER BY t.data DESC
 LIMIT 10;
-´´´
+```
+
 Mas como uma segunda opção, os dados podem ser anexados manualmente no início da sessão.
 
 ### Como os dados são usados no prompt?
@@ -67,7 +68,7 @@ BradIA LTDA | moderado | B | 2025-10-27 | Cartão Caju - Benefício Alimentaçã
 
 Caso o agente utilize Python para realizar a consulta, os dados serão usados dessa maneira:
 
-´´´Python
+```Python
 [
   {
     "cliente": "BradIA LTDA",
@@ -90,7 +91,7 @@ Caso o agente utilize Python para realizar a consulta, os dados serão usados de
     "tipo": "saida"
   }
 ]
-´´´
+```
 
 ---
 
