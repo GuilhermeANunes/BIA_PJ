@@ -60,8 +60,8 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | Gemini Flash via API |
+| Interface | Projeto na interface do próprio Claude Code |
+| LLM | Claude Code Sonnet 5.0 |
 | Base de Conhecimento | DataBase em Sqlite3 com as informações do cliente, produtos, transações e histórico de interações |
 | Validação | Checagem de alucinações |
 
