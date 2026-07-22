@@ -46,7 +46,7 @@
       "nome": "Capital de Giro",
       "finalidade": "reforço de capital de giro para fluxo de caixa",
       "prazo_max": 60,
-      "custo_mensal": 1.6,
+      "custo_mensal": "Entre 1.6 e 1.8, dependendo do rating e rar do cliente",
       "limite": 500000.00,
       "garantia": "Imovel"
     },
@@ -54,7 +54,7 @@
       "nome": "Capital de Giro FGI",
       "finalidade": "financiar investimentos em expansão e capital de giro para fluxo de caixa",
       "prazo_max": 60,
-      "custo_mensal": 1.5,
+      "custo_mensal": "Entre 1.4 e 1.6, dependendo do rating e rar do cliente",
       "limite": 1000000.00,
       "garantia": "80% FGI + Aval"
     },
@@ -62,7 +62,7 @@
       "nome": "Conta Garantida",
       "finalidade": "limite para pagamento de despesas de curto prazo, cobrindo descasamentos de fluxo de caixa, sendo cobrado por cada dia de utilização, proporcional ao valor utilizado",
       "prazo_max": 3,
-      "custo_mensal": 1.8,
+      "custo_mensal": "Entre 1.8 e 2, dependendo do rating e rar do cliente",
       "limite": 100000.00,
       "garantia": "Aval"
     },
@@ -70,7 +70,7 @@
       "nome": "Antecipação de Recebíveis",
       "finalidade": "limite para antecipar os valores a receber dos clientes, ajustando o fluxo de caixa, cobrado de acordo aos dias antecipados, proporcional ao valor antecipado",
       "prazo_max": 3,
-      "custo_mensal": 1.7,
+      "custo_mensal": "Entre 1.6 e 1.9, dependendo do rating e rar do cliente",
       "limite": 100000.00,
       "garantia": "duplicatas"
     },
