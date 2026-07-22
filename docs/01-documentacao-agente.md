@@ -62,7 +62,7 @@ flowchart TD
 |------------|-----------|
 | Interface | [ex: Chatbot em Streamlit] |
 | LLM | Gemini Flash via API |
-| Base de Conhecimento | JSON/CSV com dados do cliente |
+| Base de Conhecimento | DataBase em Sqlite3 com as informações do cliente, produtos, transações e histórico de interações |
 | Validação | Checagem de alucinações |
 
 ---
